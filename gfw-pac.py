@@ -12,7 +12,7 @@ def parse_args():
                         help='输出的PAC文件名', metavar='PAC')
     parser.add_argument('-p', '--proxy', dest='proxy', required=True,
                         help='代理服务器, '
-                             '例如, "PROXY 127.0.0.1:3128;"',
+                             '例如, "PROXY 127.0.0.1:%mixed-port%; SOCKS5 127.0.0.1:%mixed-port%; DIRECT;"',
                         metavar='PROXY')
     parser.add_argument('--proxy-domains', dest='user_rule',
                         help='直接通过代理域名的文件，每行一个')
