@@ -1,4 +1,4 @@
-# gfw-pac
+# Auto PAC (from gfw-pac)
 
 科学上网 PAC 文件以及生成器。通过自定义域名和 CNIP 地址生成 PAC(Proxy auto-config) 文件。对存在于自定义域名和解析出的IP不是CNIP的域名使用代理，支持IPv6。
 
