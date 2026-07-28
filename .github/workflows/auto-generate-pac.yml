@@ -37,6 +37,13 @@ jobs:
         if: env.file-exists == 'false'
         run: ./cardo.py -f cardo.pac -p "PROXY 127.0.0.1:%mixed-port%; SOCKS5 127.0.0.1:%mixed-port%;" --proxy-domains=proxy-domains.txt --direct-domains=direct-domains.txt --localtld-domains=local-tlds.txt --ip-file=cidrs-cn.txt
 
+      - name: PAC quality gates (ES5 compat + execution test)
+        if: env.file-exists == 'false'
+        run: |
+          npm install acorn --no-save --no-package-lock --no-fund --no-audit
+          node test_es5_compat.js
+          node test_pac_execution.js
+
       - name: Commit and push changes
         if: env.file-exists == 'false'
         run: |

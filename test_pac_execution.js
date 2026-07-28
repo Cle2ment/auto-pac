@@ -227,8 +227,8 @@ if (failedTests === 0) {
     console.log('🎉 所有测试通过！PAC 文件正常工作。');
     process.exit(0);
 } else {
-    console.log('⚠️  存在失败的测试，但 PAC 文件语法正确，可以使用。');
-    process.exit(0);
+    console.log('❌ 存在失败的测试用例');
+    process.exit(1);
 }
 
 /**

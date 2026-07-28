@@ -48,3 +48,5 @@ test.js
 
 .omo/
 .codegraph/
+node_modules/
+package-lock.json
