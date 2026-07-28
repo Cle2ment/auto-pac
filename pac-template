@@ -30,35 +30,34 @@ function isIpAddress(ip) {
 }
 
 function RadixTree() {
-    this.root = new Map();
+    this.root = {};
 }
 
 RadixTree.prototype.insert = function(string) {
     var node = this.root;
     for (var i = 0; i < string.length; i++) {
-        var char = string[i];
-        if (!node.has(char)) {
-            node.set(char, new Map());
+        var char = string.charAt(i);
+        if (!hop.call(node, char)) {
+            node[char] = {};
         }
-        node = node.get(char);
+        node = node[char];
     }
+    // 显式终止标记：嵌套 CIDR（短前缀包含长前缀）也能正确命中
+    node[''] = true;
 };
 
 RadixTree.prototype.search = function(string) {
     if (!string || string.length === 0) return false;
-    var currentNode = this.root;
-    var isLastNode = false;
-    for (var i=0; i < string.length; i++) {
-        var char = string[i];
-        if (currentNode.has(char)) {
-            currentNode = currentNode.get(char);
-            isLastNode = currentNode.size === 0;
-        } else {
-            break;
-        }
+    var node = this.root;
+    for (var i = 0; i < string.length; i++) {
+        // 路径上任一 CIDR 前缀终止即命中
+        if (hop.call(node, '')) return true;
+        var char = string.charAt(i);
+        if (!hop.call(node, char)) return false;
+        node = node[char];
     }
-    return isLastNode;
-}
+    return hop.call(node, '');
+};
 
 function ipToBinary(ip) {
     // IPv6 check first (IPv4 never contains ':')
@@ -67,24 +66,30 @@ function ipToBinary(ip) {
         var parts = ip.split('::');
         var left = parts[0] ? parts[0].split(':') : [];
         var right = parts[1] ? parts[1].split(':') : [];
-        
+
         // Calculate the number of zero groups to insert
         var zeroGroups = 8 - (left.length + right.length);
-        
+
         // Create the full address by inserting zero groups
         var fullAddress = left.slice();
         for (var z = 0; z < zeroGroups; z++) fullAddress.push('0');
         fullAddress = fullAddress.concat(right);
-        
-        // Convert each group to binary and pad to 16 bits
-        return fullAddress.map(function(group) {
-            return ("0000000000000000" + parseInt(group || '0', 16).toString(2)).slice(-16);
-        }).join('');
+
+        // Convert each group to binary and pad to 16 bits (ES3-safe: no Array.map)
+        var binary = '';
+        for (var i = 0; i < fullAddress.length; i++) {
+            var group = fullAddress[i] || '0';
+            binary += ("0000000000000000" + parseInt(group, 16).toString(2)).slice(-16);
+        }
+        return binary;
     }
-    // IPv4
-    return ip.split('.').map(function(num) {
-        return ("00000000" + parseInt(num, 10).toString(2)).slice(-8);
-    }).join('');
+    // IPv4 (ES3-safe: no Array.map)
+    var octets = ip.split('.');
+    var binaryV4 = '';
+    for (var j = 0; j < octets.length; j++) {
+        binaryV4 += ("00000000" + parseInt(octets[j], 10).toString(2)).slice(-8);
+    }
+    return binaryV4;
 }
   
 function isInDirectDomain(host) {
