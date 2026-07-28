@@ -137,6 +137,8 @@ const testCases = [
     { url: 'cdn.baidu.com', expectedResult: 'DIRECT', description: '百度CDN子域名（直连）' },
     { url: 'www.gov.cn', expectedResult: 'DIRECT', description: '政府网站子域名（直连）' },
     { url: 'api.weixinbridge.com', expectedResult: 'DIRECT', description: '微信子域名（直连）' },
+    { url: 'www.zhihu.com', expectedResult: 'DIRECT', description: '知乎子域名（直连）' },
+    { url: 'ele.me', expectedResult: 'DIRECT', description: '饿了么 .me 域（直连）' },
     
     // 代理域名
     { url: 'google.com.hk', expectedResult: 'PROXY', description: 'Google（代理）' },
