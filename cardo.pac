@@ -1,11 +1,11 @@
-var proxy = "PROXY 127.0.0.1:%mixed-port%; SOCKS5 127.0.0.1:%mixed-port%; DIRECT;";
+var proxy = "PROXY 127.0.0.1:%mixed-port%; SOCKS5 127.0.0.1:%mixed-port%;";
 
 var direct = 'DIRECT';
 
-var directDomains = ["gov.cn","115.com","123pan.com","123957.com","baidu.com","baidupcs.com","baidustatic.com","bdimg.com","bdstatic.com","cdn.bcebos.com","cdnnode.cn","qq.com","weixinbridge.com","gtimg.com","gtimg.cn","qstatic.com","cdn-go.cn","qpic.cn","qlogo.cn","qqmail.com","tencent.com","bilibili.com","hdslb.com","bilivideo.cn","biliapi.net","iqiyi.com","iqiyipic.com","qy.net","71edge.com","youku.com","ykimg.com","tower.im","weibo.com","weibo.cn","weibocdn.com","sinaimg.cn","sinajs.cn","sina.cn","taobao.com","aliyun.com","aliyuncs.com","alicdn.com","alibabausercontent.com","alipay.com","alipayobjects.com","aliyundrive.com","dingtalk.com","mmstat.com","tmall.com","jd.com","360buyimg.com","300hu.com","126.com","163.com","189.cn","21cn.com","139.com","10086.cn","pinduoduo.com","pddpic.com","zijieapi.com","amemv.com","ecombdapi.com","baike.com","byteimg.com","douyin.com","douyinpic.com","douyinstatic.com","douyinvod.com","supercachenode.com","bytedance.com","bytedanceapi.com","bytescm.com","bytecdn.cn","byteoc.com","bytednsdoc.com","bytetcc.com","feishu.cn","feishucdn.com","toutiao.com","toutiaoimg.com","toutiaostatic.com","yhgfb-cn-static.com","cmbchina.com","mi.com","xiaomi.com","amap.com","autonavi.com","meituan.com","meituan.net","sogou.com","dianping.com","quark.cn","wps.cn","wpscdn.cn","xiaohongshu.com","xhscdn.com","push.apple.com","setup.icloud.com","appldnld.apple.com","oscdn.apple.com","osrecovery.apple.com","swcdn.apple.com","swdist.apple.com","swdownload.apple.com","swscan.apple.com","updates-http.cdn-apple.com","updates.cdn-apple.com","audiocontentdownload.apple.com","devimages-cdn.apple.com","devstreaming-cdn.apple.com","oscdn.apple.com","certs.apple.com","ocsp.apple.com","ocsp2.apple.com","valid.apple.com","appleid.cdn-apple.com","icloud.com.cn","guzzoni.apple.com","app-site-association.cdn-apple.com","smp-device-content.apple.com","idv.cdn-apple.com","adcdownload.apple.com","alpdownloadit.cdn-apple.com","bricks.cdn-apple.com","self.events.data.microsoft.com","mobile.events.data.microsoft.com","browser.events.data.microsoft.com","ocsp.globalsign.com","ocsp2.globalsign.com","ocsp.digicert.cn","ocsp.dcocsp.cn","api.onedrive.com","storage.live.com","gr.global.aa-rt.sharepoint.com","skyapi.live.net","roaming.officeapps.live.com","blob.core.windows.net","default.exp-tas.com"];
+var directDomains = ["gov.cn","115.com","123pan.com","123957.com","baidu.com","baidupcs.com","baidustatic.com","bdimg.com","bdstatic.com","cdn.bcebos.com","cdnnode.cn","qq.com","weixinbridge.com","gtimg.com","gtimg.cn","qstatic.com","cdn-go.cn","qpic.cn","qlogo.cn","qqmail.com","tencent.com","bilibili.com","hdslb.com","bilivideo.cn","biliapi.net","iqiyi.com","iqiyipic.com","qy.net","71edge.com","youku.com","ykimg.com","tower.im","weibo.com","weibo.cn","weibocdn.com","sinaimg.cn","sinajs.cn","sina.cn","taobao.com","aliyun.com","aliyuncs.com","alicdn.com","alibabausercontent.com","alipay.com","alipayobjects.com","aliyundrive.com","dingtalk.com","mmstat.com","tmall.com","jd.com","360buyimg.com","300hu.com","126.com","163.com","189.cn","21cn.com","139.com","10086.cn","pinduoduo.com","pddpic.com","zijieapi.com","amemv.com","ecombdapi.com","baike.com","byteimg.com","douyin.com","douyinpic.com","douyinstatic.com","douyinvod.com","supercachenode.com","bytedance.com","bytedanceapi.com","bytescm.com","bytecdn.cn","byteoc.com","bytednsdoc.com","bytetcc.com","feishu.cn","feishucdn.com","toutiao.com","toutiaoimg.com","toutiaostatic.com","yhgfb-cn-static.com","cmbchina.com","mi.com","xiaomi.com","amap.com","autonavi.com","meituan.com","meituan.net","sogou.com","dianping.com","quark.cn","wps.cn","wpscdn.cn","xiaohongshu.com","xhscdn.com","push.apple.com","setup.icloud.com","appldnld.apple.com","oscdn.apple.com","osrecovery.apple.com","swcdn.apple.com","swdist.apple.com","swdownload.apple.com","swscan.apple.com","updates-http.cdn-apple.com","updates.cdn-apple.com","audiocontentdownload.apple.com","devimages-cdn.apple.com","devstreaming-cdn.apple.com","oscdn.apple.com","certs.apple.com","ocsp.apple.com","ocsp2.apple.com","valid.apple.com","appleid.cdn-apple.com","icloud.com.cn","guzzoni.apple.com","app-site-association.cdn-apple.com","smp-device-content.apple.com","idv.cdn-apple.com","adcdownload.apple.com","alpdownloadit.cdn-apple.com","bricks.cdn-apple.com","self.events.data.microsoft.com","mobile.events.data.microsoft.com","browser.events.data.microsoft.com","ocsp.globalsign.com","ocsp2.globalsign.com","ocsp.digicert.cn","ocsp.dcocsp.cn","api.onedrive.com","storage.live.com","gr.global.aa-rt.sharepoint.com","skyapi.live.net","roaming.officeapps.live.com","blob.core.windows.net","default.exp-tas.com","zhihu.com","zhimg.com","ele.me","netease.com","126.net","127.net","douyu.com","huya.com","mgtv.com","sohu.com","ifeng.com","58.com","ganji.com","ctrip.com","qunar.com","sf-express.com","didiglobal.com","zhipin.com","kanzhun.com","ximalaya.com","smzdm.com","hupu.com","ithome.com","mydrivers.com","csdn.net","cnblogs.com","oschina.net","segmentfault.com","ccb.com","abchina.com","bankcomm.com","psbc.com","huawei.com","oppo.com","meizu.com","tianyancha.com","qcc.com","sspai.com"];
 var directDomainHash = {};
 
-var domainsUsingProxy = ["google.com.hk","ent.com","youtube.com","googlevideo.com","ytimg.com","github.com","github.io","githubusercontent.com","githubassets.com","bing.com","bing.cn","bing.net","bingapis.com","live.com","stackoverflow.com","wikipedia.org","godaddy.com","cloudflare.com","twitter.com","x.com","twimg.com","docker.com","facebook.com","facebook.net","fbcdn.net","segment.io","unpkg.com","jsdelivr.com","tv.apple.com","instagram.com","cdninstagram.com","reddit.com","redd.it","whatsapp.com","whatsapp.net"];
+var domainsUsingProxy = ["google.com.hk","ent.com","youtube.com","googlevideo.com","ytimg.com","github.com","github.io","githubusercontent.com","githubassets.com","bing.com","bing.net","bingapis.com","live.com","stackoverflow.com","wikipedia.org","godaddy.com","cloudflare.com","twitter.com","x.com","twimg.com","docker.com","facebook.com","facebook.net","fbcdn.net","segment.io","unpkg.com","jsdelivr.com","tv.apple.com","instagram.com","cdninstagram.com","reddit.com","redd.it","whatsapp.com","whatsapp.net"];
 var proxyDomainHash = {};
 
 // Foreign TLDs overwhelmingly non-Chinese — skip DNS for these
@@ -30,35 +30,34 @@ function isIpAddress(ip) {
 }
 
 function RadixTree() {
-    this.root = new Map();
+    this.root = {};
 }
 
 RadixTree.prototype.insert = function(string) {
     var node = this.root;
     for (var i = 0; i < string.length; i++) {
-        var char = string[i];
-        if (!node.has(char)) {
-            node.set(char, new Map());
+        var char = string.charAt(i);
+        if (!hop.call(node, char)) {
+            node[char] = {};
         }
-        node = node.get(char);
+        node = node[char];
     }
+    // 显式终止标记：嵌套 CIDR（短前缀包含长前缀）也能正确命中
+    node[''] = true;
 };
 
 RadixTree.prototype.search = function(string) {
     if (!string || string.length === 0) return false;
-    var currentNode = this.root;
-    var isLastNode = false;
-    for (var i=0; i < string.length; i++) {
-        var char = string[i];
-        if (currentNode.has(char)) {
-            currentNode = currentNode.get(char);
-            isLastNode = currentNode.size === 0;
-        } else {
-            break;
-        }
+    var node = this.root;
+    for (var i = 0; i < string.length; i++) {
+        // 路径上任一 CIDR 前缀终止即命中
+        if (hop.call(node, '')) return true;
+        var char = string.charAt(i);
+        if (!hop.call(node, char)) return false;
+        node = node[char];
     }
-    return isLastNode;
-}
+    return hop.call(node, '');
+};
 
 function ipToBinary(ip) {
     // IPv6 check first (IPv4 never contains ':')
@@ -67,24 +66,30 @@ function ipToBinary(ip) {
         var parts = ip.split('::');
         var left = parts[0] ? parts[0].split(':') : [];
         var right = parts[1] ? parts[1].split(':') : [];
-        
+
         // Calculate the number of zero groups to insert
         var zeroGroups = 8 - (left.length + right.length);
-        
+
         // Create the full address by inserting zero groups
         var fullAddress = left.slice();
         for (var z = 0; z < zeroGroups; z++) fullAddress.push('0');
         fullAddress = fullAddress.concat(right);
-        
-        // Convert each group to binary and pad to 16 bits
-        return fullAddress.map(function(group) {
-            return ("0000000000000000" + parseInt(group || '0', 16).toString(2)).slice(-16);
-        }).join('');
+
+        // Convert each group to binary and pad to 16 bits (ES3-safe: no Array.map)
+        var binary = '';
+        for (var i = 0; i < fullAddress.length; i++) {
+            var group = fullAddress[i] || '0';
+            binary += ("0000000000000000" + parseInt(group, 16).toString(2)).slice(-16);
+        }
+        return binary;
     }
-    // IPv4
-    return ip.split('.').map(function(num) {
-        return ("00000000" + parseInt(num, 10).toString(2)).slice(-8);
-    }).join('');
+    // IPv4 (ES3-safe: no Array.map)
+    var octets = ip.split('.');
+    var binaryV4 = '';
+    for (var j = 0; j < octets.length; j++) {
+        binaryV4 += ("00000000" + parseInt(octets[j], 10).toString(2)).slice(-8);
+    }
+    return binaryV4;
 }
   
 function isInDirectDomain(host) {
@@ -211,7 +216,7 @@ var radixTree = new RadixTree();
     }
 
     // Build DNS pollution IP hash
-    var pollutionIPs = ['59.24.3.173','203.98.7.65','243.185.187.39','8.7.198.45','37.61.54.158'];
+    var pollutionIPs = ['4.36.66.178','8.7.198.45','37.61.54.158','46.82.174.68','59.24.3.173','64.33.88.161','64.33.99.47','64.66.163.251','65.104.202.252','65.160.219.113','66.45.252.237','69.63.187.12','69.171.224.40','74.86.118.24','74.86.142.55','74.86.151.162','74.86.228.110','78.16.49.15','88.191.249.183','93.179.102.130','98.124.126.30','98.124.243.43','118.5.49.6','128.242.245.93','159.106.121.75','173.252.73.48','199.16.156.38','202.53.137.209','203.98.7.65','209.145.54.50','209.220.30.174','211.5.133.18','243.185.187.30','243.185.187.39','249.129.46.48','253.157.14.165'];
     for (i = 0; i < pollutionIPs.length; i++) {
         dnsPollutionHash[pollutionIPs[i]] = true;
     }
