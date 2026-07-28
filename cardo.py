@@ -23,7 +23,7 @@ def parse_args():
         dest="proxy",
         required=True,
         help="代理服务器, "
-        '例如, "PROXY 127.0.0.1:%%mixed-port%%; SOCKS5 127.0.0.1:%%mixed-port%%; DIRECT;"',
+        '例如, "PROXY 127.0.0.1:%%mixed-port%%; SOCKS5 127.0.0.1:%%mixed-port%%;"',
         metavar="PROXY",
     )
     parser.add_argument(

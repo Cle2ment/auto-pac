@@ -31,7 +31,7 @@
 下载 `cardo.pac`，将第一行的代理服务器地址替换为自己的即可：
 
 ```
-var proxy = 'PROXY 127.0.0.1:8080; SOCKS5 127.0.0.1:1080; DIRECT;';
+var proxy = 'PROXY 127.0.0.1:8080; SOCKS5 127.0.0.1:1080;';
 ```
 
 ### 方式二：自定义生成
@@ -63,7 +63,7 @@ usage: cardo.py -f 输出的PAC文件名 -p 代理服务器 [-h]
 
 ```bash
 ./cardo.py -f cardo.pac \
-             -p "PROXY 192.168.1.200:3128; DIRECT" \
+             -p "PROXY 192.168.1.1:3128" \
              --proxy-domains=proxy-domains.txt \
              --direct-domains=direct-domains.txt \
              --localtld-domains=local-tlds.txt \
@@ -124,6 +124,7 @@ Cardo PAC 仅添加访问频率最高的域名，可以明确知道哪些域名�
 * 自行解决 DNS 污染问题
 * 经常更新到包含最新数据的 PAC 文件（订阅 Release）
 * 代理工具最好同时配置 GEOIP/GEOSITE 等路由规则（及时更新数据的前提下）
+* 代理链不建议以 `DIRECT` 结尾 —— 代理短暂不可用时，Chromium 会将其标记为 bad 并静默直连 5 分钟，被墙站点表现为间歇性断网
 
 ## 许可
 
